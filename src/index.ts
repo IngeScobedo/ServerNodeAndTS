@@ -2,6 +2,10 @@ import express from "express";
 import exphbs from "express-handlebars";
 import path from "path";
 
+//Importing Routes
+import IndexRoutes from "./routes";
+
+
 //initializations
 const app = express();
 
@@ -24,7 +28,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 //Routes
-app.get('/books',(req,res)=> res.send('Books'))
+app.use('/books',IndexRoutes)
 
 
 //Static Files
